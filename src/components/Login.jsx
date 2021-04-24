@@ -1,16 +1,16 @@
 import { Grid } from "@material-ui/core"
 import Banner from "./login/Banner"
-import Main from "./login/Main"
+import Form from "./login/Form"
 
 const Login = () => {
     return (
         <>
             <Grid container spacing={2}>
                 <Banner />
-                <Main />
+                <Form />
             </Grid>
         </>
     )
 }
 
-export default Login
+export default Login;
