@@ -1,9 +1,10 @@
+import Login from "./components/Login";
 
 
 function App() {
   return (
     <>
-      <h1>Este es un título</h1>
+      <Login />
     </>
   );
 }
