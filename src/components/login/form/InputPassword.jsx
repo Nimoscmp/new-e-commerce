@@ -1,10 +1,25 @@
 import { FormControl, FormHelperText, IconButton, InputAdornment, InputLabel, OutlinedInput } from "@material-ui/core";
-import { VisibilityOff } from "@material-ui/icons";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
+import { hide_password_action, input_blur_action, password_focus_action, show_password_action } from "../../../redux/mainDucks";
+import { useDispatch, useSelector } from "react-redux";
 import useStyles from "../../../styles/Styles";
 
 const InputPassword = () => {
 
     const classes = useStyles();
+
+    const { password : passwordFocus } = useSelector(state => state.style);
+    const showPassword = useSelector(state => state.password);
+
+    const dispatch = useDispatch();
+
+    const handleShowPassword = () => {
+        if (showPassword) {
+            dispatch(hide_password_action());
+        } else {
+            dispatch(show_password_action());
+        }
+    }
 
     return (
         <>
@@ -13,20 +28,23 @@ const InputPassword = () => {
                 <OutlinedInput
                     id="password"
                     name="password"
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     labelWidth={90}
-                    // onFocus={() => setInputFocus({...inputFocus, _password: true})}
-                    // onBlur={() => setInputFocus({...inputFocus, _password: false})}
+                    onFocus={() => dispatch(password_focus_action())}
+                    onBlur={() => dispatch(input_blur_action())}
                     // onChange={handleChange}
                     endAdornment={
                     <InputAdornment position="end">
                         <IconButton
                         aria-label="toggle password visibility"
-                        // onClick={handleShowPassword}
+                        onClick={handleShowPassword}
                         edge="end"
                         >
-                        
-                            <VisibilityOff className="visibility"/>
+                        {showPassword ?
+                        <VisibilityOff className={passwordFocus ? classes.iconBlue : classes.iconGray}/>
+                        :
+                        <Visibility className={passwordFocus ? classes.iconBlue : classes.iconGray}/>
+                        }
                             
                         </IconButton>
                     </InputAdornment>

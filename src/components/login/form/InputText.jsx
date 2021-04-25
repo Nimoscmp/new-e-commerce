@@ -8,7 +8,7 @@ const InputText = () => {
 
     const classes = useStyles();
 
-    const { username : usernameFocus , password : passwordFocus } = useSelector(state => state.style);
+    const { username : usernameFocus } = useSelector(state => state.style);
 
     const dispatch = useDispatch();
 

@@ -1,14 +1,15 @@
 import { applyMiddleware, createStore, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 //Ducks
-import stylesReducer from './mainDucks';
+import { handlePasswordReducer, stylesReducer } from './mainDucks';
 
 
 
 //Combine reducer
 const rootReducer = combineReducers({
     //Different reducers are consumed into store
-    style: stylesReducer
+    style: stylesReducer,
+    password: handlePasswordReducer
 })
 
 //Store data in redux devtools extension
