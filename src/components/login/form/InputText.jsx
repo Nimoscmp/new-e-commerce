@@ -1,10 +1,16 @@
 import { FormControl, FormHelperText, InputAdornment, InputLabel, OutlinedInput } from "@material-ui/core";
 import { AccountCircleOutlined } from '@material-ui/icons';
 import useStyles from "../../../styles/Styles";
+import { useDispatch, useSelector } from "react-redux";
+import { input_blur_action, username_focus_action } from "../../../redux/mainDucks";
 
 const InputText = () => {
 
     const classes = useStyles();
+
+    const { username : usernameFocus , password : passwordFocus } = useSelector(state => state.style);
+
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -15,14 +21,13 @@ const InputText = () => {
                     name="username"
                     type="text"
                     labelWidth={60}
-                    className={classes.inputBlue}
-                    // onFocus={handleFocus}
-                    // onBlur={handleBlur}
+                    onFocus={() => dispatch(username_focus_action())}
+                    onBlur={() => dispatch(input_blur_action())}
                     // onChange={handleChange}
                     endAdornment={
                     <InputAdornment position="end">
                         
-                        <AccountCircleOutlined className="classcircle"/>
+                        <AccountCircleOutlined className={usernameFocus ? classes.iconBlue : classes.iconGray}/>
                         
                     </InputAdornment>
                     }

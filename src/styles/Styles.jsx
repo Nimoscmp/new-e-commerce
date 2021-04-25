@@ -27,24 +27,19 @@ const useStyles = makeStyles((theme) => ({
     },
 
     //  Input text
-    //  Button
-    inputBlue: {
-        // color: '#ffd166 !important',
-        // transition: 'all 0.3s easeInOut',
-        // '&:hover': {
-        //     color: '#0062e3'
-        // }
-    },
 
+    //  Icons
+    iconBlue: {
+        color: '#002884',
+        transition: 'all 0.3s ease-out'
+    },
+    iconGray: {
+        color: '#6e6e6e',
+        transition: 'all 0.3s ease-out'
+    },
+    
     //  Button
-    buttonGreen: {
-        // backgroundColor: '#3d5a80',
-        // color: 'white',
-        // transition: 'all 0.3s easeInOut',
-        // '&:hover': {
-        //     backgroundColor: '#0062e3'
-        // }
-    }
+    
 }));
 
 export default useStyles;
