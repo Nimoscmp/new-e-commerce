@@ -9,9 +9,15 @@ const useStyles = makeStyles((theme) => ({
     :::::::::::::::::::::::*/
 
     marginOne: {
-        marginTop: theme.spacing(1),
-        marginBottom: theme.spacing(1)
+        marginTop: '0.5rem !important',
+        marginBottom: '0.5rem !important'
     },
+
+    /*::::::::::::::::::::: 
+    ::::  Banner styles  ::::
+    :::::::::::::::::::::::*/
+
+
 
     /*::::::::::::::::::::: 
     ::::  Form styles  ::::
@@ -26,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(1)
     },
 
-    //  Input text
-
     //  Icons
     iconBlue: {
         color: '#002884',
@@ -36,10 +40,7 @@ const useStyles = makeStyles((theme) => ({
     iconGray: {
         color: '#6e6e6e',
         transition: 'all 0.3s ease-out'
-    },
-    
-    //  Button
-    
+    }
 }));
 
 export default useStyles;
