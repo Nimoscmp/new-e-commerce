@@ -17,7 +17,24 @@ const useStyles = makeStyles((theme) => ({
     ::::  Banner styles  ::::
     :::::::::::::::::::::::*/
 
-
+    //Grid banner
+    dFlexCenter : {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    //Section
+    w80 : {
+        width:' 80%'
+    },
+    //Title
+    fw300 : {
+        fontWeight: '300'
+    },
+    //Strong
+    blue : {
+        color: '#072b8f'
+    },
 
     /*::::::::::::::::::::: 
     ::::  Form styles  ::::
